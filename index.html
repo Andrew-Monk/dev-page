@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Andrew Monk</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="static/style.css" />
+	<!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+	<div class="navbar" id="navbar">
+	<nav>
+		<ul>
+			<li><a href="#section2">About</a></li>
+			<li><a href="#section3">Skills</a></li>
+			<li><a href="#section4">Projects</a></li>
+			<li><a href="#section5">Contact</a></li>
+		</ul>
+	</nav>
+	</div>
+
+	<!-- Particles.js div -->
+	<div id="particles-js">
+		<div class="flex">
+			<div class="portfolio">
+				<img class='mugshot' src='static/test.png' id='imageSwap'>
+			</div>
+			<div class="heading">
+				<h2>Andrew Monk</h2>
+				<h3></h3>
+				<script>
+					// Function to create typewriter effect
+					function typeWriterEffect(lines, element, speed) {
+					let lineIndex = 0;
+					let charIndex = 0;
+					let isDeleting = false;
+
+					function type() {
+						const currentLine = lines[lineIndex];
+						if (isDeleting) {
+						element.innerHTML = currentLine.substring(0, charIndex - 1);
+						charIndex--;
+						} else {
+						element.innerHTML = currentLine.substring(0, charIndex + 1);
+						charIndex++;
+						}
+
+						if (!isDeleting && charIndex === currentLine.length) {
+						isDeleting = true;
+						setTimeout(type, speed * 2); // Pause at the end of a line before deleting
+						} else if (isDeleting && charIndex === 0) {
+						isDeleting = false;
+						lineIndex = (lineIndex + 1) % lines.length; // Move to the next line
+						setTimeout(type, speed); // Start typing the next line immediately
+						} else {
+						setTimeout(type, isDeleting ? speed / 2 : speed); // Adjust typing speed
+						}
+					}
+					type();
+					}
+
+					// Get the h3 element that contains the text to be typed
+					const h3Element = document.querySelector('.heading h3');
+
+					// Set the lines and typing speed (adjust as needed)
+					const linesToType = [
+					"These are some pickles",
+					"This is the second line",
+					"And here's the third line"
+					];
+					const typingSpeed = 125; // Milliseconds per character
+
+					// Call the typewriter function
+					typeWriterEffect(linesToType, h3Element, typingSpeed);
+				</script>
+			</div>
+		</div>
+		<div class="links">
+			<a href="https://github.com/Andrew-Monk?tab=repositories">
+			  <img src="https://cdn-icons-png.flaticon.com/128/2504/2504911.png" alt="Icon 1">
+			</a>
+			<a href="https://www.linkedin.com/in/andrew-monk-/">
+			  <img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt="Icon 2">
+			</a>
+			<a href="https://gitlab.com/users/Andrew.Monk/projects">
+			  <img src="https://cdn-icons-png.flaticon.com/128/5968/5968853.png" alt="Icon 3">
+			</a>
+			<a href="https://example.com/link4">
+			  <img src="https://cdn-icons-png.flaticon.com/128/2195/2195529.png" alt="Icon 4">
+			</a>
+		  </div>
+		  <a href="#section2" id="down-arrow" class="arrow">&#10151;</a>
+	</div>
+	<!-- Section 2 -->
+	<div class="section2" id="section2">
+		<!-- Add content for Section 2 here -->
+		<h2>About</h2>
+		<p>This is the content of Section 2.</p>
+	</div>
+
+	<!-- Section 3 -->
+	<div class="section3" id="section3">
+		<!-- Add content for Section 3 here -->
+		<h2>Skills</h2>
+		<p>This is the content of Section 3.</p>
+	</div>
+
+	<!-- Section 4 -->
+	<div class="section4" id="section4">
+		<!-- Add content for Section 4 here -->
+		<h2>Projects</h2>
+		<p>This is the content of Section 3.</p>
+	</div>
+
+	<!-- Section 5 -->
+	<div class="section5" id="section5">
+		<!-- Add content for Section 5 here -->
+		<h2>Contact</h2>
+		<p>This is the content of Section 3.</p>
+	</div>
+
+	<!-- Import Particles.js and app.js files -->
+	<script src="particles.js/particles.js"></script>
+	<script src="particles.js/demo/js/app.js"></script>
+
+	<!-- Smooth Scroll Code -->
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const navLinks = document.querySelectorAll("nav a");
+
+			navLinks.forEach((link) => {
+				link.addEventListener("click", smoothScroll);
+			});
+
+			function smoothScroll(e) {
+				e.preventDefault();
+				const targetId = e.currentTarget.getAttribute("href");
+				const targetSection = document.querySelector(targetId);
+				const offsetTop = targetSection.offsetTop;
+
+				window.scrollTo({
+					top: offsetTop,
+					behavior: "smooth",
+				});
+			}
+		});
+	</script>
+	<!-- Used code for image swap below-->
+	<!-- <script>
+		const image = document.getElementById('imageSwap');
+
+		// Set the paths to your first and second images
+		const firstImagePath = 'static/test.png';
+		const secondImagePath = 'static/profile3.JPG';
+
+		// Add event listeners for mouseenter and mouseleave events
+		image.addEventListener('mouseenter', () => {
+			image.src = secondImagePath;
+		});
+
+		image.addEventListener('mouseleave', () => {
+			image.src = firstImagePath;
+		});
+	</script> -->
+	<!-- Used code for down arrow below-->
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			// Separate function for the down arrow to scroll to Section 2
+			function scrollToSection2() {
+				const targetSection = document.querySelector("#section2"); // Target Section 2
+				targetSection.scrollIntoView({ behavior: "smooth" });
+			}
+
+			// Separate event listener for the down arrow
+			const downArrowLink = document.getElementById("down-arrow");
+			downArrowLink.addEventListener("click", () => {
+				scrollToSection2();
+			});
+		});
+	</script>
+</body>
+</html>
