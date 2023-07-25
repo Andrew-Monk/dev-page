@@ -20,7 +20,38 @@
 		</ul>
 	</nav>
 	</div>
+	<div>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Back to top</button>
+		  <script>
+							// Get the button:
+				let mybutton = document.getElementById("myBtn");
 
+				// When the user scrolls down 20px from the top of the document, show the button
+				window.onscroll = function() {scrollFunction()};
+
+				function scrollFunction() {
+				if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+					mybutton.style.display = "block";
+				} else {
+					mybutton.style.display = "none";
+				}
+				}
+
+				// When the user clicks on the button, scroll to the top of the document
+				function topFunction() {
+				if ('scrollBehavior' in document.documentElement.style) {
+					// If the browser supports smooth scrolling, use it
+					window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+					});
+				} else {
+					// For older browsers that don't support smooth scrolling, fall back to the previous method
+					document.body.scrollTop = 0; // For Safari
+					document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+				}
+				}
+		  </script>
 	<!-- Particles.js div -->
 	<div id="particles-js">
 		<div class="flex">
@@ -91,20 +122,48 @@
 			  <img src="https://cdn-icons-png.flaticon.com/128/2195/2195529.png" alt="Icon 4">
 			</a>
 		  </div>
-		  <a href="#section2" id="down-arrow" class="arrow">&#10151;</a>
+		  <!-- <a href="#section2" id="down-arrow" class="arrow">&#10151;</a> -->
 	</div>
 	<!-- Section 2 -->
 	<div class="section2" id="section2">
 		<!-- Add content for Section 2 here -->
-		<h2>About</h2>
-		<p>This is the content of Section 2.</p>
+		<div class="aboutme">
+			<h2>About Me</h2>
+			<p>Greetings! I'm a passionate and dedicated software engineer with a relentless curiosity for problem-solving and a love for creating innovative solutions. My journey in the world of technology began after serving in the United States Marine Corps as a Support Equipment Technician, where I gained invaluable experience in aviation electronics, equipment repair, and planned preventative maintenance. <br> <br> These experiences instilled in me a strong sense of discipline and attention to detail, qualities that have proven indispensable in my software engineering endeavors.
+
+				Following my time in the USMC, I furthered my career as a Field Service Technician at Melitta Professional Coffee Solutions, where I became well-versed in equipment maintenance and meticulous repairs. Later, I joined Tesla as a Virtual Diagnostics Technician, harnessing my skills in troubleshooting, electrical repairs, and field service.
+
+				<br> <br>Hack Reactor proved to be the perfect crucible for honing my technical prowess. There, I immersed myself in a dynamic learning environment, acquiring expertise in HTML5, CSS, Python, Django, JavaScript, React.js, and more. Armed with this knowledge, I'm excited to embark on new challenges and contribute to projects that make a meaningful impact.
+
+				As a collaborator at heart, I thrive in team environments, fostering open communication and cooperation. My commitment to delivering excellence ensures that I consistently surpass expectations and deliver exceptional results.
+
+				I am fueled by a constant thirst for knowledge and an eagerness to push the boundaries of what is possible in the world of software engineering. <br> <br> I believe that technology has the power to drive positive change, and I am determined to be at the forefront of that transformation.
+
+				I'm open to new opportunities and connections in the software engineering field. If you're interested in learning more about my skills and experiences or want to explore potential collaborations, please feel free to reach out. Thank you for taking the time to get to know me, and I look forward to embarking on exciting endeavors together!
+
+				</p>
+		</div>
 	</div>
 
 	<!-- Section 3 -->
 	<div class="section3" id="section3">
 		<!-- Add content for Section 3 here -->
-		<h2>Skills</h2>
-		<p>This is the content of Section 3.</p>
+		<div class="aboutme">
+			<h2>About Me</h2>
+			<p>Greetings! I'm a passionate and dedicated software engineer with a relentless curiosity for problem-solving and a love for creating innovative solutions. My journey in the world of technology began after serving in the United States Marine Corps as a Support Equipment Technician, where I gained invaluable experience in aviation electronics, equipment repair, and planned preventative maintenance. <br> <br> These experiences instilled in me a strong sense of discipline and attention to detail, qualities that have proven indispensable in my software engineering endeavors.
+
+				Following my time in the USMC, I furthered my career as a Field Service Technician at Melitta Professional Coffee Solutions, where I became well-versed in equipment maintenance and meticulous repairs. Later, I joined Tesla as a Virtual Diagnostics Technician, harnessing my skills in troubleshooting, electrical repairs, and field service.
+
+				<br> <br>Hack Reactor proved to be the perfect crucible for honing my technical prowess. There, I immersed myself in a dynamic learning environment, acquiring expertise in HTML5, CSS, Python, Django, JavaScript, React.js, and more. Armed with this knowledge, I'm excited to embark on new challenges and contribute to projects that make a meaningful impact.
+
+				As a collaborator at heart, I thrive in team environments, fostering open communication and cooperation. My commitment to delivering excellence ensures that I consistently surpass expectations and deliver exceptional results.
+
+				I am fueled by a constant thirst for knowledge and an eagerness to push the boundaries of what is possible in the world of software engineering. <br> <br> I believe that technology has the power to drive positive change, and I am determined to be at the forefront of that transformation.
+
+				I'm open to new opportunities and connections in the software engineering field. If you're interested in learning more about my skills and experiences or want to explore potential collaborations, please feel free to reach out. Thank you for taking the time to get to know me, and I look forward to embarking on exciting endeavors together!
+
+				</p>
+		</div>
 	</div>
 
 	<!-- Section 4 -->
@@ -165,7 +224,7 @@
 		});
 	</script> -->
 	<!-- Used code for down arrow below-->
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", () => {
 			// Separate function for the down arrow to scroll to Section 2
 			function scrollToSection2() {
@@ -179,6 +238,7 @@
 				scrollToSection2();
 			});
 		});
-	</script>
+	</script> -->
+	</div>
 </body>
 </html>
