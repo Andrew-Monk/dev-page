@@ -19,7 +19,7 @@ body {
 }
 
 .heading h2 {
-    color: rgb(255, 239, 212);
+    color: rgb(255, 255, 255);
     font-size: 70px;
     margin: 10px;
     padding: 20px;
@@ -27,7 +27,7 @@ body {
 }
 
 .heading h3 {
-    color: rgb(255, 239, 212);
+    color: rgb(255, 255, 255);
     font-size: 20px;
     margin: 10px;
     text-align: center;
@@ -80,6 +80,7 @@ body {
     max-height: 380px;
     max-width: 380px;
     border-radius: 180px;
+    filter: contrast(70%);
 }
 
 .links {
@@ -101,7 +102,7 @@ body {
     transform: translateX(20px); /* Adjust this value to move the icons to the right */
   }
 
-.arrow {
+/* .arrow {
     position: absolute;
     bottom: 0px;
     right: 20px;
@@ -115,7 +116,7 @@ body {
 
 .arrow:hover{
     color: antiquewhite;
-}
+} */
 
  .flex{
         /* display: flex; */
@@ -207,7 +208,7 @@ body {
 .aboutme{
     width: 80%;
     margin: auto;
-    color: rgb(146, 255, 253);
+    color: rgb(255, 253, 224);
     font-weight: 400;
     filter: contrast(150%);
 }
@@ -217,10 +218,203 @@ body {
     margin-top: 90px;
     right: 13%;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.503);
+    background: rgba(41, 41, 41, 0.503);
     backdrop-filter: blur(1px);
     border: 1px solid rgba(255, 255, 255, 0.045);
     border-radius: 25px;
     position: fixed;
     filter: contrast(200%);
   }
+
+
+  /* Play with these later for moblie funtionality
+  start here and work screen size up */
+/* @media screen and (max-width: 425px) {
+
+    .heading {
+      top: 15%;
+      width: 90%;
+      transform: translateX(5%);
+    }
+
+    .navbar {
+      top: 10px;
+      padding: 5px;
+    }
+
+    .navbar li {
+      margin: 0 3px;
+    }
+
+    .mugshot {
+      max-height: 280px;
+      max-width: 280px;
+    }
+
+    .links  {
+        flex-direction: row;
+      }
+
+    .aboutmecard {
+      width: 80%;
+      right: 4.5%;
+      margin: 5px;
+    }
+
+    .heading h2 {
+        display: none;
+      }
+
+      .heading h3 {
+       display: none;
+      }
+
+      .section2 h2,
+      .section3 h2,
+      .section4 h2,
+      .section5 h2 {
+        font-size: 36px;
+      }
+
+      .aboutme {
+        font-size: 16px;
+      }
+
+      #myBtn {
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      #particles-js,
+      .section2,
+      .section3,
+      .section4,
+      .section5 {
+        background-position: center;
+      }
+  } */
+
+.form-input {
+  background-color: aliceblue;
+  border-radius: 25px;
+  margin: auto;
+  max-width: 800px;
+  margin-top: 150px;
+  padding-bottom: 50px;
+  padding-top: 5px;
+}
+
+.formcarry-container * {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+
+  /* colors */
+  --color-blue: #2552d0;
+  --color-light-blue: #3266e3;
+  --color-gray: #e5e7eb;
+  --color-dark-gray: #9da3ae;
+  --color-pink: #edadd2;
+}
+
+.formcarry-container {
+  /* container */
+  --c-width: 50%;
+  --c-max-width: 500px;
+
+  width: var(--c-width);
+  max-width: var(--c-max-width);
+  display: block;
+  margin: 10vh auto 0 auto;
+}
+
+.formcarry-form label {
+  display: block;
+  padding: 12px 0 2px 0;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.formcarry-form input,
+.formcarry-form textarea {
+  font-size: 16px;
+  display: block;
+  width: 125%;
+  padding: 10px;
+  background-color: var(--color-gray);
+  border: 1px solid rgba(177, 177, 177, 0.767);
+  outline: none;
+  border-radius: 8px;
+  color: var(--color-dark-gray);
+}
+
+.formcarry-form input:focus,
+.formcarry-form textarea:focus {
+  background-color: #fff;
+  color: var(--color-dark-gray);
+}
+
+.formcarry-form input:focus:required:invalid {
+  border-color: var(--color-pink);
+  background-color: #fff;
+}
+
+.formcarry-form button {
+  display: block;
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border-color: transparent;
+  background-color: var(--color-blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  align-items: center;
+
+  transition: 300ms all;
+}
+
+.formcarry-form button:hover {
+  background-color: var(--color-light-blue);
+}
+
+.formcarry-alert {
+  padding: 12px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 12px;
+  display: none;
+}
+
+.formcarry-alert.visible {
+  display: block;
+}
+
+.formcarry-alert.success {
+  background: #69cf9d;
+}
+
+.formcarry-alert.error {
+  background: #de524c;
+}
+
+.formcarry-container p {
+  font-size: 35px;
+  margin: 0px;
+  font-family: "Inter", sans-serif;
+}
+
+.formcarry-form label,
+.formcarry-form input,
+.formcarry-form textarea,
+.formcarry-form button {
+  width: 125%; /* Make the form elements take up the full container width */
+  max-width: 400px; /* Set a max-width for the form elements to avoid stretching */
+}
